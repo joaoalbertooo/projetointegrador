@@ -1,20 +1,40 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>
-      Blank
-    </ion-title>
+    <ion-title></ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
+<app-menu content-id="home-content"></app-menu>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
+<ion-content id="home-content">
+  <div class="logo-title-container">
+    <img src="../../../assets/logo.png" alt="Matec" class="logo"/>
+    <h1 class="app-title">RJ carbono</h1>
   </div>
+
+  <div class="welcome-message">
+    <p>Bem-vindo(a) ao RJ carbono! Estamos aqui para ajudar você a maximizar a eficiência da sua energia solar.</p>
+  </div>
+
+  <ion-button expand="block" fill="solid" color="success" class="square-button" routerLink="/periodicidade">
+    <ion-icon name="calculator-outline" slot="start"></ion-icon>
+    <div>Calculadora de carbono</div>
+  </ion-button>
+  
+  <ion-button expand="block" fill="solid" color="success" class="square-button" routerLink="/grafico-exemplo">
+    <ion-icon name="bar-chart-outline" slot="start"></ion-icon>
+    <div>Gráfico</div>
+  </ion-button>
+  
+  <ion-button expand="block" fill="solid" color="success" class="square-button" routerLink="/perfil-exemplo">
+    <ion-icon name="person-circle-outline" slot="start"></ion-icon>
+    <div>Perfil</div>
+  </ion-button>
+  
+  <ion-button expand="block" fill="solid" color="success" class="square-button" routerLink="/cadastro-equipamentos">
+    <ion-icon name="construct-outline" slot="start"></ion-icon>
+    <div>Cadastro Equipamento</div>
+  </ion-button>
 </ion-content>

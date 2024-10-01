@@ -1,0 +1,79 @@
+<ion-header [translucent]="true">
+  <ion-toolbar color="success">
+    <ion-title>Cadastro de Equipamentos Eletrônicos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding" style="--background: #f0f4f7;">
+  <ion-card style="border-radius: 12px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+    <ion-card-header style="background-color: var(--ion-color-success); color: white;">
+      <ion-card-title style="font-size: 22px; font-weight: bold;">Novo Equipamento</ion-card-title>
+      <ion-card-subtitle style="font-size: 16px; opacity: 0.9;">Preencha os detalhes do equipamento eletrônico</ion-card-subtitle>
+    </ion-card-header>
+
+    <ion-card-content style="padding: 20px;">
+      <form (ngSubmit)="cadastrarEquipamento()">
+        
+        <!-- Nome do Equipamento -->
+        <ion-item style="--background: #ffffff; border-radius: 8px;">
+          <ion-icon name="pricetag-outline" slot="start" style="color: var(--ion-color-success);"></ion-icon>
+          <ion-label position="floating" style="color: var(--ion-color-success); font-weight: 600;">Nome do Equipamento</ion-label>
+          <ion-input type="text" [(ngModel)]="nome" name="nome" required></ion-input>
+        </ion-item>
+
+        <!-- Tipo de Equipamento -->
+        <ion-item style="--background: #ffffff; border-radius: 8px;">
+          <ion-icon name="construct-outline" slot="start" style="color: var(--ion-color-success);"></ion-icon>
+          <ion-label position="floating" style="color: var(--ion-color-success); font-weight: 600;">Tipo de Equipamento</ion-label>
+          <ion-select [(ngModel)]="equipamento.tipo" name="tipo" required>
+            <ion-select-option value="eletrodomestico">Eletrodoméstico</ion-select-option>
+            <ion-select-option value="eletronico">Eletrônico</ion-select-option>
+            <ion-select-option value="iluminacao">Iluminação</ion-select-option>
+            <ion-select-option value="climatizacao">Climatização</ion-select-option>
+            <ion-select-option value="outros">Outros</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <!-- Potência -->
+        <ion-item style="--background: #ffffff; border-radius: 8px;">
+          <ion-icon name="flash-outline" slot="start" style="color: var(--ion-color-success);"></ion-icon>
+          <ion-label position="floating" style="color: var(--ion-color-success); font-weight: 600;">Potência (Watts)</ion-label>
+          <ion-input type="number" [(ngModel)]="equipamento.potencia" name="potencia" required></ion-input>
+        </ion-item>
+
+        <!-- Tempo Médio de Uso Diário -->
+        <ion-item style="--background: #ffffff; border-radius: 8px;">
+          <ion-icon name="time-outline" slot="start" style="color: var(--ion-color-seccess);"></ion-icon>
+          <ion-label position="floating" style="color: var(--ion-color-success); font-weight: 600;">Tempo Médio de Uso Diário (horas)</ion-label>
+          <ion-input type="number" [(ngModel)]="equipamento.tempoUsoDiario" name="tempoUsoDiario" required></ion-input>
+        </ion-item>
+
+        <!-- Eficiência Energética -->
+        <ion-item style="--background: #ffffff; border-radius: 8px;">
+          <ion-icon name="leaf-outline" slot="start" style="color: var(--ion-color-success);"></ion-icon>
+          <ion-label position="floating" style="color: var(--ion-color-success); font-weight: 600;">Eficiência Energética</ion-label>
+          <ion-select [(ngModel)]="equipamento.eficiencia" name="eficiencia" required>
+            <ion-select-option value="A" style="color: green;">A</ion-select-option>
+            <ion-select-option value="B" style="color: lightgreen;">B</ion-select-option>
+            <ion-select-option value="C" style="color: yellow;">C</ion-select-option>
+            <ion-select-option value="D" style="color: orange;">D</ion-select-option>
+            <ion-select-option value="E" style="color: red;">E</ion-select-option>
+          </ion-select>
+        </ion-item>
+
+        <!-- Observações -->
+        <ion-item style="--background: #ffffff; border-radius: 8px;">
+          <ion-icon name="clipboard-outline" slot="start" style="color: var(--ion-color-success);"></ion-icon>
+          <ion-label position="floating" style="color: var(--ion-color-success); font-weight: 600;">Observações</ion-label>
+          <ion-textarea [(ngModel)]="equipamento.observacoes" name="observacoes"></ion-textarea>
+        </ion-item>
+
+        <!-- Botão de Cadastro -->
+        <ion-button (click)="salvar()" expand="block" type="submit" style="--background: var(--ion-color-success); color: white; font-weight: 600;">
+          Cadastrar Equipamento
+        </ion-button>
+      </form>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+

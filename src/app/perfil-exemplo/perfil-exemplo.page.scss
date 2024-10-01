@@ -1,0 +1,78 @@
+ion-header {
+    --background: #3880ff; /* Cor de fundo do cabeçalho */
+    color: white;
+  
+    ion-toolbar {
+      --background: transparent;
+      --color: white;
+      ion-title {
+        font-size: 20px;
+        font-weight: bold;
+      }
+    }
+  }
+  
+  ion-content {
+    --background: #f0f0f5; /* Cor de fundo da página */
+    
+    ion-card {
+      margin: 20px;
+      border-radius: 10px;
+  
+      ion-card-header {
+        background-color: #f4f4f9;
+        border-radius: 10px 10px 0 0;
+        text-align: center;
+  
+        ion-card-title {
+          color: #222;
+          font-weight: bold;
+          font-size: 18px;
+          padding: 10px 0;
+        }
+      }
+  
+      ion-card-content {
+        ion-item {
+          --background: #ffffff;
+          border-radius: 5px;
+          margin-bottom: 10px;
+  
+          ion-label {
+            font-weight: bold;
+            color: #444;
+          }
+  
+          ion-input {
+            --color: #222;
+            padding: 10px;
+          }
+        }
+  
+        ion-button {
+          margin-top: 20px;
+          border-radius: 10px;
+          font-weight: bold;
+  
+          &:first-of-type {
+            margin-bottom: 10px;
+          }
+        }
+      }
+    }
+  
+    ion-button[color="danger"] {
+      margin: 20px;
+      --background: #eb445a; /* Cor de logout */
+      font-weight: bold;
+    }
+  }
+  
+  /* Estiliza o input de senha para garantir visibilidade */
+  ion-input[type="password"] {
+    ion-input-inner {
+      --padding-start: 10px;
+      --padding-end: 10px;
+    }
+  }
+  

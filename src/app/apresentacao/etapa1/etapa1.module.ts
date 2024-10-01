@@ -15,6 +15,6 @@ import { Etapa1Page } from './etapa1.page';
     IonicModule,
     Etapa1PageRoutingModule
   ],
-  declarations: [Etapa1Page]
+  declarations: []
 })
 export class Etapa1PageModule {}

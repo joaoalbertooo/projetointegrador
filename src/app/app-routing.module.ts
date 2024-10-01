@@ -23,6 +23,50 @@ const routes: Routes = [
     path: 'etapa3',
     loadChildren: () => import('./apresentacao/etapa3/etapa3.module').then( m => m.Etapa3PageModule)
   },
+  {
+    path: 'cadastro-usuario',
+    loadChildren: () => import('./cadastro-usuario/cadastro-usuario.module').then( m => m.CadastroUsuarioPageModule)
+  },
+  {
+    path: 'periodicidade',
+    loadChildren: () => import('./periodicidade/periodicidade.module').then( m => m.PeriodicidadePageModule)
+  },
+  {
+    path: 'apresentacao',
+    loadChildren: () => import('./apresentacao/apresentacao.module').then( m => m.ApresentacaoPageModule)
+  },
+  {
+    path: 'cadastro',
+    loadChildren: () => import('./cadastro/cadastro.module').then( m => m.CadastroPageModule)
+  },
+  {
+    path: 'grafico-exemplo',
+    loadChildren: () => import('./grafico-exemplo/grafico-exemplo.module').then( m => m.GraficoExemploPageModule)
+  },
+  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
+  },
+  {
+    path: 'card-exemplo',
+    loadChildren: () => import('./card-exemplo/card-exemplo.module').then( m => m.CardExemploPageModule)
+  },
+  {
+    path: 'dashboard',
+    loadChildren: () => import('./dashboard/dashboard.module').then( m => m.DashboardPageModule)
+  },
+  {
+    path: 'cadastro-equipamentos',
+    loadChildren: () => import('./cadastro-equipamentos/cadastro-equipamentos.module').then( m => m.CadastroEquipamentosPageModule)
+  },
+  {
+    path: 'perfil-exemplo',
+    loadChildren: () => import('./perfil-exemplo/perfil-exemplo.module').then( m => m.PerfilExemploPageModule)
+  },
+  {
+    path: 'menu',
+    loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule)
+  },
 ];
 
 @NgModule({

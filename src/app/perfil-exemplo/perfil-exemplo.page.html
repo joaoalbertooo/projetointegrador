@@ -1,0 +1,66 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Perfil do Usuário</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- Perfil do Usuário com opção de edição -->
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Perfil do Usuário</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Informações do Perfil</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <!-- Nome -->
+      <ion-item>
+        <ion-label position="stacked">Nome Completo</ion-label>
+        <ion-input [(ngModel)]="nome" placeholder="Seu nome completo" required></ion-input>
+      </ion-item>
+
+      <!-- Email -->
+      <ion-item>
+        <ion-label position="stacked">E-mail</ion-label>
+        <ion-input [(ngModel)]="email" type="email" placeholder="Seu e-mail" required></ion-input>
+      </ion-item>
+
+      <!-- Telefone -->
+      <ion-item>
+        <ion-label position="stacked">Telefone</ion-label>
+        <ion-input [(ngModel)]="telefone" type="tel" placeholder="Seu telefone" required></ion-input>
+      </ion-item>
+
+      <!-- CPF -->
+      <ion-item>
+        <ion-label position="stacked">CPF</ion-label>
+        <ion-input [(ngModel)]="cpf" type="text" placeholder="Seu CPF" required></ion-input>
+      </ion-item>
+
+      <!-- Senha -->
+      <ion-item>
+        <ion-label position="stacked">Senha</ion-label>
+        <ion-input [(ngModel)]="senha" type="password" placeholder="Digite sua nova senha" required></ion-input>
+      </ion-item>
+
+      <!-- Botões -->
+      <ion-button expand="block" color="primary" (click)="editarPerfil()">
+        Editar Perfil
+      </ion-button>
+
+      <ion-button expand="block" color="success" (click)="salvarPerfil()">
+        Salvar Alterações
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <!-- Logout -->
+  <ion-button expand="block" color="danger" (click)="logout()">
+    Sair
+  </ion-button>
+</ion-content>

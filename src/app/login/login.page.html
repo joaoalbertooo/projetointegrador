@@ -1,0 +1,56 @@
+<ion-content [fullscreen]="true">
+  <form>
+    <ion-card>
+      <ion-card-header>
+        <ion-card-title>Login</ion-card-title>
+      </ion-card-header>
+
+      <ion-card-content>
+        <ion-item>
+          <ion-label position="floating">Usuário</ion-label>
+          <ion-input placeholder="Digite seu Usuário" id="username" type="text"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Senha</ion-label>
+          <ion-input placeholder="Digite sua senha" id="senha" type="password"></ion-input>
+        </ion-item>
+
+
+        <ion-item lines="none">
+          <ion-router-link routerLink="/esqueci-senha" color="primary">
+            Esqueceu sua senha?
+          </ion-router-link>
+        </ion-item>
+
+        <ion-button expand="block" type="submit" color="primary">Entrar</ion-button>
+
+
+
+      
+        <ion-item lines="none">
+          <ion-router-link routerLink="/criar-conta" color="primary">
+            Criar uma conta
+          </ion-router-link>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+
+    <ion-card>
+      <ion-card-content>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="2">
+              <ion-icon name="megaphone-outline" size="large"></ion-icon>
+            </ion-col>
+            <ion-col>
+              <p>
+                Obrigado por escolher nossa empresa! Estamos comprometidos em fornecer a melhor experiência para você.
+              </p>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-content>
+    </ion-card>
+  </form>
+</ion-content>
