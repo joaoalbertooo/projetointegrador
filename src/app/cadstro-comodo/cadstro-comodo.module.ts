@@ -4,19 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MenuPageRoutingModule } from './menu-routing.module';
+import { CadstroComodoPageRoutingModule } from './cadstro-comodo-routing.module';
 
-import { MenuPage } from './menu.page';
-
+import { CadstroComodoPage } from './cadstro-comodo.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MenuPageRoutingModule
+    CadstroComodoPageRoutingModule
   ],
-  declarations: [MenuPage],
-  exports:[MenuPage]
+  declarations: [CadstroComodoPage]
 })
-export class MenuPageModule {}
+export class CadstroComodoPageModule {}

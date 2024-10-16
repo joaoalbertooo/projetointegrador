@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-periodicidade',
@@ -10,7 +11,7 @@ export class PeriodicidadePage implements OnInit {
   dias: number | null = null;    // Número de dias para o cálculo
   resultado: number | null = null; // Resultado da emissão de carbono (kg CO2)
 
-  constructor() { }
+  constructor(private navCtrl: NavController) { }
 
   ngOnInit() {}
 
@@ -43,5 +44,10 @@ export class PeriodicidadePage implements OnInit {
     } else {
       console.log('Erro ao salvar: os valores de consumo ou dias estão inválidos ou o cálculo não foi realizado.');
     }
+  }
+
+  // Método para voltar para a página inicial (home)
+  voltarHome() {
+    this.navCtrl.navigateRoot('/home');
   }
 }

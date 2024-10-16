@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>Esqueci minha senha</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Recuperar senha</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <p>Insira seu e-mail cadastrado abaixo. Enviaremos um codígo de 6 digitos para redefinir sua senha.</p>
+
+      <form (submit)="onSubmit()">
+        <ion-item>
+          <ion-label position="floating">E-mail</ion-label>
+          <ion-input type="email" [(ngModel)]="email" name="email" required></ion-input>
+        </ion-item>
+
+        <div *ngIf="emailError" class="error-message">
+          <ion-text color="danger">Por favor, insira um e-mail válido.</ion-text>
+        </div>
+
+        <ion-button expand="block" type="submit" color="success" [disabled]="!email">Enviar</ion-button>
+      </form>
+
+      <div *ngIf="isCodeSent">
+        <p>Insira o código de 6 dígitos que você recebeu por e-mail e redefina sua senha.</p>
+
+        <ion-item>
+          <ion-label position="floating">Código de 6 dígitos</ion-label>
+          <ion-input type="text" maxlength="6" [(ngModel)]="verificationCode" name="verificationCode" required></ion-input>
+        </ion-item>
+
+        <div *ngIf="verificationCodeError" class="error-message">
+          <ion-text color="danger">Por favor, insira um código de 6 dígitos válido.</ion-text>
+        </div>
+
+        <ion-item>
+          <ion-label position="floating">Nova senha</ion-label>
+          <ion-input type="password" [(ngModel)]="newPassword" name="newPassword" required></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label position="floating">Confirmar senha</ion-label>
+          <ion-input type="password" [(ngModel)]="confirmPassword" name="confirmPassword" required></ion-input>
+        </ion-item>
+
+        <div *ngIf="passwordError" class="error-message">
+          <ion-text color="danger">As senhas não correspondem.</ion-text>
+        </div>
+
+        <ion-button expand="block" type="button" color="success" (click)="onResetPassword()">Redefinir senha</ion-button>
+      </div>
+
+      <ion-button expand="block" fill="clear" color="medium" routerLink="/login">
+        Voltar para login
+      </ion-button>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-title size="small">© RJ carbono</ion-title>
+  </ion-toolbar>
+</ion-footer>
+

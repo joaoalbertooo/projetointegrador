@@ -7,13 +7,16 @@ import { IonicModule } from '@ionic/angular';
 import { CadastroEquipamentosPageRoutingModule } from './cadastro-equipamentos-routing.module';
 
 import { CadastroEquipamentosPage } from './cadastro-equipamentos.page';
+import { MenuPageModule } from '../menu/menu.module';
+
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CadastroEquipamentosPageRoutingModule
+    CadastroEquipamentosPageRoutingModule,
+    MenuPageModule
   ],
   declarations: [CadastroEquipamentosPage]
 })

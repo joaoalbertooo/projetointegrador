@@ -7,13 +7,15 @@ import { IonicModule } from '@ionic/angular';
 import { PeriodicidadePageRoutingModule } from './periodicidade-routing.module';
 
 import { PeriodicidadePage } from './periodicidade.page';
+import { MenuPageModule } from '../menu/menu.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    PeriodicidadePageRoutingModule
+    PeriodicidadePageRoutingModule,
+    MenuPageModule
   ],
   declarations: [PeriodicidadePage]
 })

@@ -1,12 +1,22 @@
-<ion-header [translucent]="true">
+<ion-header>
   <ion-toolbar>
-    <ion-title>Calculadora de Carbono</ion-title>
+    <ion-title>Calculadora de pegada de carbono</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
+<app-menu content-id="home-content"></app-menu>
 
-<ion-content [fullscreen]="true">
+<ion-content id="home-content">
   <ion-header collapse="condense">
     <ion-toolbar>
+     <ion-button slot="start"> 
+        <!-- Ícone de casinha para voltar ao início -->
+        <ion-button (click)="voltarHome()">
+          <ion-icon slot="icon-only" name="home-outline"></ion-icon>
+        </ion-button>
+       </ion-button> 
       <ion-title size="large">Calculadora de Carbono</ion-title>
     </ion-toolbar>
   </ion-header>

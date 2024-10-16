@@ -45,7 +45,8 @@
       <!-- Senha -->
       <ion-item>
         <ion-label position="stacked">Senha</ion-label>
-        <ion-input [(ngModel)]="senha" type="password" placeholder="Digite sua nova senha" required></ion-input>
+        <ion-input [(ngModel)]="senha" [type]="showPassword ? 'text' : 'password'" placeholder="Digite sua nova senha" required></ion-input>
+        <ion-icon [name]="showPassword ? 'eye-off' : 'eye'" slot="end" (click)="togglePasswordVisibility()"></ion-icon>
       </ion-item>
 
       <!-- Botões -->

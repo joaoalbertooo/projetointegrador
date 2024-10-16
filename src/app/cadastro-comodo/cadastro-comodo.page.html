@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cadastro de Cômodos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form (ngSubmit)="onSubmit()">
+    <ion-item>
+      <ion-label position="floating">Nome do Cômodo</ion-label>
+      <ion-input type="text" [(ngModel)]="comodo.nome" name="nome" required></ion-input>
+    </ion-item>
+
+    <ion-list>
+      <ion-item *ngFor="let equipamento of comodo.equipamentos; let i = index">
+        <ion-label position="floating">Equipamento {{ i + 1 }}</ion-label>
+        <ion-input type="text" [(ngModel)]="equipamento.nome" name="equipamento{{i}}" required></ion-input>
+        <ion-button (click)="removerEquipamento(i)" color="danger" slot="end">Remover</ion-button>
+      </ion-item>
+    </ion-list>
+
+    <ion-button (click)="adicionarEquipamento()" expand="full" color="success">Adicionar Equipamento</ion-button>
+    <ion-button type="submit" expand="full" color="success">Cadastrar Cômodo</ion-button>
+  </form>
+</ion-content>

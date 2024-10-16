@@ -63,10 +63,23 @@ const routes: Routes = [
     path: 'perfil-exemplo',
     loadChildren: () => import('./perfil-exemplo/perfil-exemplo.module').then( m => m.PerfilExemploPageModule)
   },
+
   {
-    path: 'menu',
-    loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule)
+    path: 'cadstro-comodo',
+    loadChildren: () => import('./cadstro-comodo/cadstro-comodo.module').then( m => m.CadstroComodoPageModule)
   },
+  {
+    path: 'cadastro-comodo',
+    loadChildren: () => import('./cadastro-comodo/cadastro-comodo.module').then( m => m.CadastroComodoPageModule)
+  },
+  {
+    path: 'esqueceu',
+    loadChildren: () => import('./esqueceu/esqueceu.module').then( m => m.EsqueceuPageModule)
+  },
+  // {
+  //   path: 'menu',
+  //   loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule)
+  // },
 ];
 
 @NgModule({

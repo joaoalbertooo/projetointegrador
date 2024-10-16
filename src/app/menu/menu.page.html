@@ -1,13 +1,19 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>menu</ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-menu [contentId]="content_id"> 
+  <ion-header>
+    <ion-toolbar>
+      <ion-title></ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-list>
+      <ion-item (click)="go('/home')">Home</ion-item>
+      <ion-item (click)="go('/periodicidade')">Calculadora</ion-item>
+      <ion-item (click)="go('/cadastro-equipamentos')">cadastro de equipamento</ion-item>
+      <ion-item (click)="go('/login')">login</ion-item>
+      <ion-item (click)="go('/cadastro-comodo')">Cadastro de Comodo</ion-item>
+    </ion-list>    
+  </ion-content>
+</ion-menu>
 
-<ion-content class="ion-padding">
-  <ion-list>
-    <ion-item (click)="go('/home')">Home</ion-item>
-    <ion-item (click)="go('/calculadora-carbono')">Calculadora</ion-item>
-    <ion-item (click)="go('/configuracoes')">Configuraçôes</ion-item>
-  </ion-list>
-</ion-content>
+
+

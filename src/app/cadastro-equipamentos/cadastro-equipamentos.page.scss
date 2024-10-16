@@ -25,7 +25,6 @@ ion-content {
 
   ion-card {
     margin: 20px;
-    border-radius: 20px;
     box-shadow: 0 8px 20px rgba(20, 189, 91, 0.993);
     overflow: hidden;
     background: #ffffff;
@@ -71,7 +70,6 @@ ion-content {
       ion-textarea {
         --background: #ffffff;
         border: 2px solid var(--ion-color-success-shade);
-        border-radius: 12px;
         --padding-start: 16px;
         --padding-end: 16px;
         font-size: 16px;
@@ -94,7 +92,6 @@ ion-content {
     font-weight: 600;
     --background: var(--ion-button-background);
     --background-activated: var(--ion-button-background-activated);
-    --border-radius: 28px;
     --box-shadow: 0 6px 12px rgba(46, 204, 113, 0.3);
     transition: all 0.3s ease;
 

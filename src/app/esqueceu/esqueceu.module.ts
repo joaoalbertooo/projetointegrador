@@ -4,19 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { MenuPageRoutingModule } from './menu-routing.module';
+import { EsqueceuPageRoutingModule } from './esqueceu-routing.module';
 
-import { MenuPage } from './menu.page';
-
+import { EsqueceuPage } from './esqueceu.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    MenuPageRoutingModule
+    EsqueceuPageRoutingModule
   ],
-  declarations: [MenuPage],
-  exports:[MenuPage]
+  declarations: [EsqueceuPage]
 })
-export class MenuPageModule {}
+export class EsqueceuPageModule {}
