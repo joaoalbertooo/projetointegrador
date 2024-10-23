@@ -4,9 +4,9 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CadastroComodoPageRoutingModule } from './cadastro-comodo-routing.module';
+import { ListarcomodoPageRoutingModule } from './listarcomodo-routing.module';
 
-import { CadastroComodoPage } from './cadastro-comodo.page';
+import { ListarcomodoPage } from './listarcomodo.page';
 import { MenuPageModule } from '../menu/menu.module';
 
 @NgModule({
@@ -14,9 +14,9 @@ import { MenuPageModule } from '../menu/menu.module';
     CommonModule,
     FormsModule,
     IonicModule,
-    CadastroComodoPageRoutingModule,
+    ListarcomodoPageRoutingModule,
     MenuPageModule
   ],
-  declarations: [CadastroComodoPage]
+  declarations: [ListarcomodoPage]
 })
-export class CadastroComodoPageModule {}
+export class ListarcomodoPageModule {}

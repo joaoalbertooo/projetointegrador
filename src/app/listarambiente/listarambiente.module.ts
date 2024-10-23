@@ -4,17 +4,17 @@ import { FormsModule } from '@angular/forms';
 
 import { IonicModule } from '@ionic/angular';
 
-import { CadstroComodoPageRoutingModule } from './cadstro-comodo-routing.module';
+import { ListarambientePageRoutingModule } from './listarambiente-routing.module';
 
-import { CadstroComodoPage } from './cadstro-comodo.page';
+import { ListarambientePage } from './listarambiente.page';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    CadstroComodoPageRoutingModule
+    ListarambientePageRoutingModule
   ],
-  declarations: [CadstroComodoPage]
+  declarations: [ListarambientePage]
 })
-export class CadstroComodoPageModule {}
+export class ListarambientePageModule {}

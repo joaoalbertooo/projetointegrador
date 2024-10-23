@@ -74,7 +74,7 @@ salvar() {
   fd.append('tempouso', this.tempouso);
 
   this.rs.post(fd).subscribe(() => {
-    location.href = '/cadastro-equipamentos';
+    location.href = '/listarequipamento';
   });
 }
 }

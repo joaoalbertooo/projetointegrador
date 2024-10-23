@@ -1,0 +1,95 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-title>Cadastro de Ambiente</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<app-menu content-id="home-content"></app-menu>
+
+<ion-content class="ion-padding">
+  <!-- Mensagem de erro -->
+  <ion-text color="danger" *ngIf="mensagemErro">
+    <p>{{ mensagemErro }}</p>
+  </ion-text>
+
+  <ion-list>
+    <!-- Seleção de Cômodo -->
+    <ion-item>
+      <ion-label position="stacked">Cômodo</ion-label>
+      <ion-select 
+        [(ngModel)]="comodoSelecionado" 
+        placeholder="Selecione um cômodo">
+        <ion-select-option 
+          *ngFor="let comodo of comodos" 
+          [value]="comodo.id">
+          {{ comodo.nome }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- Seleção de Equipamento -->
+    <ion-item>
+      <ion-label position="stacked">Equipamento</ion-label>
+      <ion-select 
+        [(ngModel)]="equipamentoSelecionado" 
+        placeholder="Selecione um equipamento">
+        <ion-select-option 
+          *ngFor="let equipamento of equipamentos" 
+          [value]="equipamento.id">
+          {{ equipamento.nome }} - {{ equipamento.potencia }}W
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- Tempo de Uso -->
+    <ion-item>
+      <ion-label position="stacked">Tempo de Uso (horas/dia)</ion-label>
+      <ion-input 
+        type="number" 
+        [(ngModel)]="tempoUso" 
+        min="0" 
+        max="24">
+      </ion-input>
+    </ion-item>
+
+    <!-- Botão para adicionar equipamento -->
+    <ion-button expand="block" (click)="adicionarEquipamento()" color="success">
+      <ion-icon name="add" slot="start"></ion-icon>
+      Adicionar Equipamento
+    </ion-button>
+  </ion-list>
+
+  <!-- Lista de Equipamentos Selecionados -->
+  <ion-list *ngIf="equipamentosSelecionados.length > 0">
+    <ion-list-header>
+      <ion-label>Equipamentos Adicionados</ion-label>
+    </ion-list-header>
+
+    <ion-item *ngFor="let equip of equipamentosSelecionados; let i = index">
+      <ion-label>
+        <h2>{{ equip.nome }}</h2>
+        <p>Potência: {{ equip.potencia }}W</p>
+        <p>Tempo de uso: {{ equip.tempo_uso }} horas/dia</p>
+      </ion-label>
+      <ion-button slot="end" color="danger" fill="clear" (click)="removerEquipamento(i)">
+        <ion-icon name="trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+
+  <!-- Botões de Ação -->
+  <div class="ion-padding">
+    <ion-button expand="block" (click)="salvar()">
+      <ion-icon name="save" slot="start"></ion-icon>
+      Salvar
+    </ion-button>
+
+    <ion-button expand="block" color="danger" (click)="go('/home')">
+      <ion-icon name="close" slot="start"></ion-icon>
+      Cancelar
+    </ion-button>
+  </div>
+
+</ion-content>

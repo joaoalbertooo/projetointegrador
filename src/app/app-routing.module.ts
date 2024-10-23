@@ -65,16 +65,28 @@ const routes: Routes = [
   },
 
   {
-    path: 'cadstro-comodo',
-    loadChildren: () => import('./cadstro-comodo/cadstro-comodo.module').then( m => m.CadstroComodoPageModule)
-  },
-  {
     path: 'cadastro-comodo',
     loadChildren: () => import('./cadastro-comodo/cadastro-comodo.module').then( m => m.CadastroComodoPageModule)
   },
   {
     path: 'esqueceu',
     loadChildren: () => import('./esqueceu/esqueceu.module').then( m => m.EsqueceuPageModule)
+  },
+  {
+    path: 'listarequipamento',
+    loadChildren: () => import('./listarequipamento/listarequipamento.module').then( m => m.ListarequipamentoPageModule)
+  },
+  {
+    path: 'listarcomodo',
+    loadChildren: () => import('./listarcomodo/listarcomodo.module').then( m => m.ListarcomodoPageModule)
+  },
+  {
+    path: 'cadastro-ambiente',
+    loadChildren: () => import('./cadastro-ambiente/cadastro-ambiente.module').then( m => m.CadastroAmbientePageModule)
+  },
+  {
+    path: 'listarambiente',
+    loadChildren: () => import('./listarambiente/listarambiente.module').then( m => m.ListarambientePageModule)
   },
   // {
   //   path: 'menu',

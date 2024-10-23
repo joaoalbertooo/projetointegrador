@@ -1,12 +1,12 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { CadstroComodoPage } from './cadstro-comodo.page';
+import { ListarambientePage } from './listarambiente.page';
 
-describe('CadstroComodoPage', () => {
-  let component: CadstroComodoPage;
-  let fixture: ComponentFixture<CadstroComodoPage>;
+describe('ListarambientePage', () => {
+  let component: ListarambientePage;
+  let fixture: ComponentFixture<ListarambientePage>;
 
   beforeEach(async(() => {
-    fixture = TestBed.createComponent(CadstroComodoPage);
+    fixture = TestBed.createComponent(ListarambientePage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

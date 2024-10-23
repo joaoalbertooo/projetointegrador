@@ -1,0 +1,49 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Listar Comodos</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<app-menu content-id="home-content"></app-menu>
+
+<ion-content [fullscreen]="true" id="home-content">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Lista de Comodos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="form-container">
+    <ion-button expand="block" class="submit-btn" style="--background: var(--ion-color-success);" (click)="go('/cadastro-comodo')">
+      Cadastrar novo Comodos
+    </ion-button>
+    <ion-card class="rounded-card">
+      <div class="form-content">
+        <div class="equipamento-list-container">
+          <div class="equipamento-grid">
+            <ion-card *ngFor="let item of comodo" class="equipamento-card">
+              <ion-card-content>
+                <h2>{{ item.nome }}</h2>
+  
+        
+                <div class="button-container">
+                  <ion-button fill="clear" (click)="editar(item.id)">
+                    <ion-icon slot="start" name="create"></ion-icon>
+                    Editar
+                  </ion-button>
+                  <ion-button fill="clear" color="danger" (click)="excluir(item.id)">
+                    <ion-icon slot="start" name="trash"></ion-icon>
+                    Excluir
+                  </ion-button>
+                </div>
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </div>      
+      </div>
+    </ion-card>
+  </div>
+</ion-content>

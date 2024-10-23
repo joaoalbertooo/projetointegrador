@@ -1,0 +1,55 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Listar Equipamentos</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<app-menu content-id="home-content"></app-menu>
+
+<ion-content [fullscreen]="true" id="home-content">
+  <ion-header collapse="condense">
+    <ion-toolbar>
+      <ion-title size="large">Lista de Equipamentos</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <div class="form-container">
+    <ion-button expand="block" class="submit-btn" style="--background: var(--ion-color-success);" (click)="go('/cadastro-equipamentos')">
+      Cadastrar novo Equipamento
+    </ion-button>
+    <ion-card class="rounded-card">
+      <div class="form-content">
+        <div class="equipamento-list-container">
+          <div class="equipamento-grid">
+            <ion-card *ngFor="let item of equipamento" class="equipamento-card">
+              <ion-card-content>
+                <h2>{{ item.nome }}</h2>
+                <p><strong>Tipo:</strong> {{ item.tipo }}</p>
+                <p><strong>Potência:</strong> {{ item.potencia }} W</p>
+                <p><strong>Eficiência:</strong> {{ item.eficiencia }}</p>
+                <p><strong>Observações:</strong> {{ item.obs }}</p>
+                <p><strong>Tempo de uso:</strong> {{ item.tempouso }} h</p>
+                <!-- Cálculo do kWh consumido -->
+                <p><strong>kWh Consumido:</strong> {{ (item.potencia * item.tempouso) / 1000 | number:'1.2-2' }} kWh</p>
+        
+                <div class="button-container">
+                  <ion-button fill="clear" (click)="editar(item.id)">
+                    <ion-icon slot="start" name="create"></ion-icon>
+                    Editar
+                  </ion-button>
+                  <ion-button fill="clear" color="danger" (click)="excluir(item.id)">
+                    <ion-icon slot="start" name="trash"></ion-icon>
+                    Excluir
+                  </ion-button>
+                </div>
+              </ion-card-content>
+            </ion-card>
+          </div>
+        </div>      
+      </div>
+    </ion-card>
+  </div>
+</ion-content>
