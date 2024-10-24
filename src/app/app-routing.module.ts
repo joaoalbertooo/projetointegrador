@@ -88,6 +88,14 @@ const routes: Routes = [
     path: 'listarambiente',
     loadChildren: () => import('./listarambiente/listarambiente.module').then( m => m.ListarambientePageModule)
   },
+  {
+    path: 'sobrenos',
+    loadChildren: () => import('./sobrenos/sobrenos.module').then( m => m.SobrenosPageModule)
+  },
+  {
+    path: 'contato',
+    loadChildren: () => import('./contato/contato.module').then( m => m.ContatoPageModule)
+  },
   // {
   //   path: 'menu',
   //   loadChildren: () => import('./menu/menu.module').then( m => m.MenuPageModule)

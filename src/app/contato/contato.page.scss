@@ -1,0 +1,86 @@
+// Variáveis de estilo
+$primary-color: #28a745;
+$text-color: #333;
+$card-background: #fff;
+$card-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+$border-radius: 10px;
+$heading-font: 'Arial', sans-serif;
+$body-font: 'Roboto', sans-serif;
+
+#contato-content {
+  padding: 20px;
+  background-color: #f4f4f4;
+  color: $text-color;
+
+  .contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+
+    h1 {
+      text-align: center;
+      font-family: $heading-font;
+      color: $primary-color;
+      margin-bottom: 20px;
+    }
+
+    p {
+      text-align: center;
+      font-family: $body-font;
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+    }
+
+    // Estilo dos cartões de contato
+    .contact-info {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      .info-card {
+        background-color: $card-background;
+        box-shadow: $card-shadow;
+        border-radius: $border-radius;
+        padding: 20px;
+        text-align: center;
+        width: 300px;
+
+        ion-icon {
+          color: $primary-color;
+          margin-bottom: 10px;
+        }
+
+        h2 {
+          font-family: $heading-font;
+          color: $primary-color;
+          margin-bottom: 10px;
+        }
+
+        p {
+          font-family: $body-font;
+          font-size: 16px;
+          line-height: 1.6;
+        }
+      }
+    }
+
+    // Estilo da seção de mapa
+    .map-section {
+      margin-top: 40px;
+      text-align: center;
+
+      h2 {
+        font-family: $heading-font;
+        font-size: 22px;
+        color: $primary-color;
+        margin-bottom: 20px;
+      }
+
+      iframe {
+        border-radius: $border-radius;
+        box-shadow: $card-shadow;
+      }
+    }
+  }
+}
