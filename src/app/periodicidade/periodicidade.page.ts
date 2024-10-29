@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NavController } from '@ionic/angular';
+import { RequisicaoService } from '../service/requisicao.service';
 
 @Component({
   selector: 'app-periodicidade',
@@ -10,10 +11,22 @@ export class PeriodicidadePage implements OnInit {
   consumo: number | null = null; // Consumo de energia em kWh
   dias: number | null = null;    // Número de dias para o cálculo
   resultado: number | null = null; // Resultado da emissão de carbono (kg CO2)
+  public equipamentos:Array<any> = [];
+  public potencia:number = 0;
 
-  constructor(private navCtrl: NavController) { }
+  constructor(
+    private navCtrl: NavController,
+    public rs:RequisicaoService
+  ) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.rs.get({
+      controller:'equipamento-listar'
+    })
+    .subscribe((res:any)=>{      
+      this.equipamentos = res;
+    });
+  }
 
   // Método para calcular a emissão de carbono
   calcularCarbono() {
@@ -49,5 +62,9 @@ export class PeriodicidadePage implements OnInit {
   // Método para voltar para a página inicial (home)
   voltarHome() {
     this.navCtrl.navigateRoot('/home');
+  }
+
+  handleChange(handle:any){
+    this.consumo = this.potencia;
   }
 }

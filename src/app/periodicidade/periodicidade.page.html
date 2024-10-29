@@ -26,6 +26,17 @@
       <ion-card-title>Calcule sua Pegada de Carbono</ion-card-title>
     </ion-card-header>
     <ion-card-content>
+      <ion-item>
+        <ion-select label="Cômodo" placeholder="Selecionar ..."></ion-select>
+        </ion-item>
+      <ion-item>
+        <ion-select label="Equipamentos" placeholder="Selecionar ..." [(ngModel)]="potencia"  (ionChange)="handleChange($event)">
+          <ion-select-option 
+            *ngFor="let e of equipamentos"
+            [value]="e.potencia"
+          >{{ e.nome }}</ion-select-option>
+        </ion-select>
+      </ion-item>      
       <!-- Entrada de consumo de energia -->
       <ion-item>
         <ion-label position="floating">Consumo de Energia (kWh)</ion-label>
