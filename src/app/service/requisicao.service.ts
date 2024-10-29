@@ -6,12 +6,12 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class RequisicaoService {
-
+  public url_api = 'https://miles.app.br/rjcarbono/';
   constructor(
     public http:HttpClient
   ) { } 
   get(dados:any){
-    return this.http.get('/requisicao',{
+    return this.http.get(this.url_api,{
        params:dados
        });
      }
@@ -22,6 +22,6 @@ export class RequisicaoService {
           'Access-Control-Allow-Origin' : '*'
         })
       };
-       return this.http.post('/requisicao',formData,httpOptions);
+       return this.http.post(this.url_api,formData,httpOptions);
      }
 }
